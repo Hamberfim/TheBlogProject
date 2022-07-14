@@ -34,6 +34,9 @@ namespace TheBlogProject.Models
         [Display(Name = "Moderated Comment")]
         public string ModeratedBody { get; set; }
 
+        // why was it moderated?  create an enum moderation type
+        public
+
         // Navigation Properties - Virtual  -- comment is a child
         public virtual Post Post { get; set; }  // holds the entire record of its data model Id above
         public virtual IdentityUser Author { get; set; }
