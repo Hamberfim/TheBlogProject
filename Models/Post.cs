@@ -33,7 +33,7 @@ namespace TheBlogProject.Models
         [Display(Name = "Updated Date")]
         public DateTime Updated { get; set; }
 
-        public bool IsReady { get; set; }  // is the post ready to be viewed publiclly
+        public bool IsReady { get; set; }  // is the post ready for publication - public - TODO: change to enum
 
         public string Slug { get; set; }  // derived from the title of the post
 
