@@ -15,7 +15,7 @@ namespace TheBlogProject.Models
 
         // Navigation Properties - Virtual
         public virtual Post Post { get; set; }  // holds the entire post record of its data model Id above
-        public virtual IdentityUser Author { get; set; }
+        public virtual BlogUser Author { get; set; }
 
     }
 }

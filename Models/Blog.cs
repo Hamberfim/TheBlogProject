@@ -39,7 +39,7 @@ namespace TheBlogProject.Models
 
 
         // navigation property
-        public virtual IdentityUser Author { get; set; }  //child class of parent IdentityUser - allows navigation from a blog to its author
+        public virtual BlogUser Author { get; set; }  //child class of parent IdentityUser - allows navigation from a blog to its author
         public virtual ICollection<Post> Posts { get; set; } = new HashSet<Post>(); // zero to many Posts - blog is a parent to Posts
 
 
