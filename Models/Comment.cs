@@ -34,7 +34,7 @@ namespace TheBlogProject.Models
         public string ModeratedBody { get; set; }
 
         // Navigation Properties - Virtual
-        public virtual Post Post { get; set; }
+        public virtual Post Post { get; set; }  // holds the entire record of its data model Id above
         public virtual IdentityUser Author { get; set; }
         public virtual IdentityUser Moderator { get; set; }
 
