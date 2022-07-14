@@ -5,6 +5,7 @@ namespace TheBlogProject.Models
 {
     public class Comment
     {
+        // Comment is a child of Post
         // primary key
         public int Id { get; set; }
 
@@ -33,10 +34,11 @@ namespace TheBlogProject.Models
         [Display(Name = "Moderated Comment")]
         public string ModeratedBody { get; set; }
 
-        // Navigation Properties - Virtual
+        // Navigation Properties - Virtual  -- comment is a child
         public virtual Post Post { get; set; }  // holds the entire record of its data model Id above
         public virtual IdentityUser Author { get; set; }
         public virtual IdentityUser Moderator { get; set; }
+
 
 
     }

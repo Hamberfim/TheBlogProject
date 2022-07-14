@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TheBlogProject.Models
 {
     public class Post
     {
+        // Post is a child of Blog
         // primary key
         public int Id { get; set; }
         // foreign key
@@ -31,7 +33,7 @@ namespace TheBlogProject.Models
         [Display(Name = "Updated Date")]
         public DateTime Updated { get; set; }
 
-        public bool IsReady { get; set; }
+        public bool IsReady { get; set; }  // is the post ready to be viewed publiclly
 
         public string Slug { get; set; }  // derived from the title of the post
 
@@ -43,6 +45,11 @@ namespace TheBlogProject.Models
         [NotMapped]
         public IFormFile Image { get; set; }
 
+        // navigation prperty
+        public virtual Blog Blog { get; set; }
+        public virtual IdentityUser Author { get; set; }
+        public virtual ICollection<Tag> Tags { get; set; } = new HashSet<Tag>(); 
+        public virtual ICollection<Comment> Comments { get; set; } = new HashSet<Comment>();  // comment is a child of Post
 
     }
 }

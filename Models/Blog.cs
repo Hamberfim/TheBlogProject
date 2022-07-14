@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TheBlogProject.Models
 {
-    public class blog
+    public class Blog
     {
+        // Blog is a parent of Post
         // primary key
         public int Id { get; set; }
         // foreign key
@@ -36,7 +38,10 @@ namespace TheBlogProject.Models
         public IFormFile Image { get; set; }
 
 
-        // 
+        // navigation property
+        public virtual IdentityUser Author { get; set; }  //child class of parent IdentityUser - allows navigation from a blog to its author
+        public virtual ICollection<Post> Posts { get; set; } = new HashSet<Post>(); // zero to many Posts - blog is a parent to Posts
+
 
     }
 }
