@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
+using TheBlogProject.Enums;
 
 namespace TheBlogProject.Models
 {
@@ -35,7 +36,7 @@ namespace TheBlogProject.Models
         public string ModeratedBody { get; set; }
 
         // why was it moderated?  create an enum moderation type
-        public
+        public ModerationType ModerationType { get; set; }
 
         // Navigation Properties - Virtual  -- comment is a child
         public virtual Post Post { get; set; }  // holds the entire record of its data model Id above
